@@ -13,7 +13,7 @@ public class DeleteAccountScreenController : MonoBehaviour
     {
         int currentUserId = GlobalVars.Instance.currentUser.id;
 
-        UnityWebRequest request = new UnityWebRequest($"https://localhost:5001/v1/users/{currentUserId}", "DELETE");
+        UnityWebRequest request = new UnityWebRequest($"http://localhost:5000/v1/users/{currentUserId}", "DELETE");
 
         request.downloadHandler = new DownloadHandlerBuffer();
 

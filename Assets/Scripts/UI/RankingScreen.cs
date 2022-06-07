@@ -13,7 +13,7 @@ public class RankingScreen : MonoBehaviour
     }
 
     IEnumerator GetUserScores() {
-        UnityWebRequest request = new UnityWebRequest("https://localhost:5001/v1/scores", "GET");
+        UnityWebRequest request = new UnityWebRequest("http://localhost:5000/v1/scores", "GET");
 
         request.downloadHandler = new DownloadHandlerBuffer();
 

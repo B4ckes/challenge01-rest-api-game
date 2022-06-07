@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UserDataController : MonoBehaviour
 {    
-    public const string API_USERS_URI = "https://localhost:5001/v1/users";
+    public const string API_USERS_URI = "http://localhost:5000/v1/users";
 
     public Text ErrorLabel;
     public InputField Username;
@@ -46,7 +46,7 @@ public class UserDataController : MonoBehaviour
 
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
 
-        UnityWebRequest request = new UnityWebRequest($"https://localhost:5001/v1/users/{currentUserId}", "PUT");
+        UnityWebRequest request = new UnityWebRequest($"http://localhost:5000/v1/users/{currentUserId}", "PUT");
 
         request.uploadHandler = (UploadHandler) new UploadHandlerRaw(jsonToSend);
         request.downloadHandler = new DownloadHandlerBuffer();

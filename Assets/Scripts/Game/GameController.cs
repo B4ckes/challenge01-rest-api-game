@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
 
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
 
-        UnityWebRequest request = new UnityWebRequest("https://localhost:5001/v1/scores", "POST");
+        UnityWebRequest request = new UnityWebRequest("http://localhost:5000/v1/scores", "POST");
         
         request.uploadHandler = (UploadHandler) new UploadHandlerRaw(jsonToSend);
         request.downloadHandler = new DownloadHandlerBuffer();

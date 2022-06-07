@@ -15,7 +15,7 @@ public class UserScoreScreen : MonoBehaviour
     IEnumerator GetUserScores() {
         int userId = GlobalVars.Instance.currentUser.id;
 
-        UnityWebRequest request = new UnityWebRequest($"https://localhost:5001/v1/users/{userId}/scores", "GET");
+        UnityWebRequest request = new UnityWebRequest($"http://localhost:5000/v1/users/{userId}/scores", "GET");
 
         request.downloadHandler = new DownloadHandlerBuffer();
 

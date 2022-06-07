@@ -39,7 +39,7 @@ public class LoginScreenController : MonoBehaviour
 
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
 
-        UnityWebRequest request = new UnityWebRequest("https://localhost:5001/v1/login", "POST");
+        UnityWebRequest request = new UnityWebRequest("http://localhost:5000/v1/login", "POST");
 
         request.uploadHandler = (UploadHandler) new UploadHandlerRaw(jsonToSend);
         request.downloadHandler = new DownloadHandlerBuffer();

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class RegisterScreenController : MonoBehaviour
 {    
-    public const string API_USERS_URI = "https://localhost:5001/v1/users";
+    public const string API_USERS_URI = "http://localhost:5000/v1/users";
 
     public Text ErrorLabel;
     public InputField Username;
@@ -44,7 +44,7 @@ public class RegisterScreenController : MonoBehaviour
 
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
 
-        UnityWebRequest request = new UnityWebRequest("https://localhost:5001/v1/users", "POST");
+        UnityWebRequest request = new UnityWebRequest("http://localhost:5000/v1/users", "POST");
 
         request.uploadHandler = (UploadHandler) new UploadHandlerRaw(jsonToSend);
         request.downloadHandler = new DownloadHandlerBuffer();
